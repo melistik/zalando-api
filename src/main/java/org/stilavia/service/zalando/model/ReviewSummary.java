@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Map;
 
@@ -15,9 +16,9 @@ import java.util.Map;
 public class ReviewSummary implements Serializable {
 
     private String articleModelId;
-    private String averageStarRating;
-    private String numberOfUserRecommendations;
-    private String numberOfUserPositiveRecommendations;
+    private BigDecimal averageStarRating;
+    private Integer numberOfUserRecommendations;
+    private Integer numberOfUserPositiveRecommendations;
     private Map<String, Integer> starRatingDistribution;
 
     private Map<String, Integer> articleSizeRatings;
