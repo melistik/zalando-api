@@ -16,6 +16,7 @@
 
 package org.stilavia.service.zalando.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -25,6 +26,7 @@ import java.util.List;
  * Created by guillermoblascojimenez on 04/07/15.
  */
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Attribute implements Serializable {
 
     private String name;

@@ -16,6 +16,7 @@
 
 package org.stilavia.service.zalando.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import java.io.Serializable;
@@ -24,6 +25,7 @@ import java.io.Serializable;
  * Created by guillermoblascojimenez on 04/07/15.
  */
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ImageMedia implements Serializable {
 
     public enum Type {

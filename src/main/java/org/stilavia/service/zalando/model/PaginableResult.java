@@ -16,6 +16,7 @@
 
 package org.stilavia.service.zalando.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import java.io.Serializable;
@@ -26,6 +27,7 @@ import java.util.List;
  * Created by guillermoblascojimenez on 16/06/15.
  */
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PaginableResult<E> implements Iterable<E>, Serializable {
 
     private List<E> content;
