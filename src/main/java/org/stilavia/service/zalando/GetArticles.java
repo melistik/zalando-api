@@ -59,4 +59,55 @@ public class GetArticles extends ExecutableRequestChain<PaginableResult<Article>
     public GetArticles articlesId(String ... ids) {
         return this.articlesId(Arrays.asList(ids));
     }
+
+    public GetArticles articleModelId(Collection<String> ids) {
+        super.getUriBuilder().addParameters("articleModelId", ids);
+        return this;
+    }
+
+    public GetArticles articleModelId(String... ids) {
+        return this.articleModelId(Arrays.asList(ids));
+    }
+
+    public GetArticles articleUnitId(Collection<String> ids) {
+        super.getUriBuilder().addParameters("articleUnitId", ids);
+        return this;
+    }
+
+    public GetArticles articleUnitId(String... ids) {
+        return this.articleUnitId(Arrays.asList(ids));
+    }
+
+    public GetArticles brand(Collection<String> brands) {
+        super.getUriBuilder().addParameters("brand", brands);
+        return this;
+    }
+
+    public GetArticles brand(String... ids) {
+        return this.brand(Arrays.asList(ids));
+    }
+
+    public GetArticles brandfamily(Collection<String> brandfamilys) {
+        super.getUriBuilder().addParameters("brandfamily", brandfamilys);
+        return this;
+    }
+
+    public GetArticles brandfamily(String... ids) {
+        return this.brandfamily(Arrays.asList(ids));
+    }
+
+    public GetArticles category(Collection<String> categories) {
+        super.getUriBuilder().addParameters("category", categories);
+        return this;
+    }
+
+    public GetArticles category(String... ids) {
+        return this.category(Arrays.asList(ids));
+    }
+
+    public GetArticles fullText(String fullText) {
+        super.getUriBuilder().addParameter("fullText", fullText);
+        return this;
+    }
+
 }
