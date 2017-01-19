@@ -34,7 +34,7 @@ Then add the artifact to your dependencies:
     <dependency>
         <groupId>org.stilavia</groupId>
         <artifactId>zalando-api</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.1-SNAPSHOT</version>
     </dependency>
     ...
 </dependencies>
@@ -46,7 +46,6 @@ And then the usage is as follows:
 public static void main(String[] args) throws IOException, URISyntaxException {
     ZalandoApi zalandoApi = new ZalandoApiBuilder()
                                 .setDomain(Domain.es_ES)
-                                .enableHttps()
                                 .build();
     PaginableResult<Category> categories = zalandoApi.categories().pageSize(20).get();
     System.out.println(categories);
@@ -65,7 +64,6 @@ public class ZalandoApiConfiguration {
     public ZalandoApi zalandoApi(@Value("${zalando-api.domain:es_ES}") Domain domain) {
         return new ZalandoApiBuilder()
                     .setDomain(domain)
-                    .enableHttps()
                     .build();
     }
     
@@ -76,11 +74,13 @@ public class ZalandoApiConfiguration {
 
 This API depends on three other popular modules:
 
-* `org.apache.httpcomponents` artifact `httpclient` version `4.5`
+* `org.springframework` artifact `spring-web` version `4.3.5.RELEASE`
 
-* `com.google.guava` artifact `guava` version `18`
+* `com.google.guava` artifact `guava` version `21.0`
 
-* `org.codehaus.jackson` artifact `jackson-mapper-asl` version `1.9.13`
+* `com.fasterxml.jackson.core` artifact `jackson-databind` version `2.8.6`
+
+* `org.apache.httpcomponents` artifact `httpclient` version `4.6`
 
 Since all these artifacts are pretty popular take with care the possible artifact's version conflicts. If you are going
  to use this software under an Android device consider the [httpclient issues](https://hc.apache.org/httpcomponents-client-4.3.x/android-port.html).
