@@ -16,50 +16,17 @@
 
 package org.stilavia.service.zalando.model;
 
+import lombok.*;
+
 import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by guillermoblascojimenez on 04/07/15.
  */
+@Data
 public class Media implements Serializable {
-
-    private static final long serialVersionUID = 42L;
 
     private List<ImageMedia> images;
 
-    public Media() {
-    }
-
-    public List<ImageMedia> getImages() {
-        return images;
-    }
-
-    public void setImages(List<ImageMedia> images) {
-        this.images = images;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Media media = (Media) o;
-
-        return !(images != null ? !images.equals(media.images) : media.images != null);
-
-    }
-
-    @Override
-    public int hashCode() {
-        return images != null ? images.hashCode() : 0;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Media{");
-        sb.append("images=").append(images);
-        sb.append('}');
-        return sb.toString();
-    }
 }

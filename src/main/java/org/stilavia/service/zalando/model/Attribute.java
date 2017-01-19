@@ -16,63 +16,18 @@
 
 package org.stilavia.service.zalando.model;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by guillermoblascojimenez on 04/07/15.
  */
+@Data
 public class Attribute implements Serializable {
-
-    private static final long serialVersionUID = 42L;
 
     private String name;
     private List<String> values;
 
-    public Attribute() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<String> getValues() {
-        return values;
-    }
-
-    public void setValues(List<String> values) {
-        this.values = values;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Attribute attribute = (Attribute) o;
-
-        if (name != null ? !name.equals(attribute.name) : attribute.name != null) return false;
-        return !(values != null ? !values.equals(attribute.values) : attribute.values != null);
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (values != null ? values.hashCode() : 0);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Attribute{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", values=").append(values);
-        sb.append('}');
-        return sb.toString();
-    }
 }

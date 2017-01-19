@@ -16,14 +16,15 @@
 
 package org.stilavia.service.zalando.model;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
  * Created by guillermoblascojimenez on 16/06/15.
  */
+@Data
 public class Brand implements Serializable {
-
-    private static final long serialVersionUID = 42L;
 
     private String key;
     private String name;
@@ -31,89 +32,4 @@ public class Brand implements Serializable {
     private String logoLargeUrl;
     private BrandFamily brandFamily;
     private String shopUrl;
-
-    public String getLogoLargeUrl() {
-        return logoLargeUrl;
-    }
-
-    public void setLogoLargeUrl(String logoLargeUrl) {
-        this.logoLargeUrl = logoLargeUrl;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLogoUrl() {
-        return logoUrl;
-    }
-
-    public void setLogoUrl(String logoUrl) {
-        this.logoUrl = logoUrl;
-    }
-
-    public BrandFamily getBrandFamily() {
-        return brandFamily;
-    }
-
-    public void setBrandFamily(BrandFamily brandFamily) {
-        this.brandFamily = brandFamily;
-    }
-
-    public String getShopUrl() {
-        return shopUrl;
-    }
-
-    public void setShopUrl(String shopUrl) {
-        this.shopUrl = shopUrl;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Brand brand = (Brand) o;
-
-        if (key != null ? !key.equals(brand.key) : brand.key != null) return false;
-        if (name != null ? !name.equals(brand.name) : brand.name != null) return false;
-        if (logoUrl != null ? !logoUrl.equals(brand.logoUrl) : brand.logoUrl != null) return false;
-        if (brandFamily != null ? !brandFamily.equals(brand.brandFamily) : brand.brandFamily != null) return false;
-        return !(shopUrl != null ? !shopUrl.equals(brand.shopUrl) : brand.shopUrl != null);
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = key != null ? key.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (logoUrl != null ? logoUrl.hashCode() : 0);
-        result = 31 * result + (brandFamily != null ? brandFamily.hashCode() : 0);
-        result = 31 * result + (shopUrl != null ? shopUrl.hashCode() : 0);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Brand{");
-        sb.append("key='").append(key).append('\'');
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", logoUrl='").append(logoUrl).append('\'');
-        sb.append(", brandFamily=").append(brandFamily);
-        sb.append(", shopUrl='").append(shopUrl).append('\'');
-        sb.append('}');
-        return sb.toString();
-    }
 }
