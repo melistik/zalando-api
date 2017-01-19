@@ -18,38 +18,22 @@ package org.stilavia.service.zalando;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.stilavia.service.zalando.model.Article;
+import org.stilavia.service.zalando.model.ReviewSummary;
 
 /**
  * Created by guillermoblascojimenez on 15/06/15.
  */
-public class GetArticle extends ExecutableRequestChain<Article> {
+public class GetArticleModelReviewsSummary extends ExecutableRequestChain<ReviewSummary> {
 
-    private static final String PATH = "/articles/%s";
-    private static final ParameterizedTypeReference<Article> TYPE_REFERENCE = new ParameterizedTypeReference<Article>() {
+    private static final String PATH = "/article-reviews-summaries/%s";
+    private static final ParameterizedTypeReference<ReviewSummary> TYPE_REFERENCE = new ParameterizedTypeReference<ReviewSummary>() {
     };
 
-    private final String articleId;
+    private final String articleModelId;
 
-    GetArticle(RequestContext context, String articleId) {
-        super(context, getPath(articleId), TYPE_REFERENCE);
-        this.articleId = articleId;
-    }
-
-
-    public GetArticleMedia media() {
-        return new GetArticleMedia(this);
-    }
-
-    public GetArticleUnits units() {
-        return new GetArticleUnits(this);
-    }
-
-    public GetArticleReviews reviews() {
-        return new GetArticleReviews(this);
-    }
-
-    public GetArticleReviewsSummary reviewsSummary() {
-        return new GetArticleReviewsSummary(this);
+    GetArticleModelReviewsSummary(RequestContext context, String articleModelId) {
+        super(context, getPath(articleModelId), TYPE_REFERENCE);
+        this.articleModelId = articleModelId;
     }
 
     private static String getPath(String articleId) {

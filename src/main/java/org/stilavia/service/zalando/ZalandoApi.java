@@ -112,4 +112,8 @@ public class ZalandoApi {
         return new GetCategories(context);
     }
 
+    public GetArticleModelReviewsSummary articleModelReviewsSummary(String articleModelId) {
+            return new GetArticleModelReviewsSummary(context, articleModelId);
+    }
+
 }
